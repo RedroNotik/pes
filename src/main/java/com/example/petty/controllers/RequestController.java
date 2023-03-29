@@ -2,6 +2,7 @@ package com.example.petty.controllers;
 import com.example.petty.models.Pet;
 import com.example.petty.models.User;
 import com.example.petty.services.PetService;
+import com.example.petty.services.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.jetbrains.annotations.NotNull;
@@ -24,24 +25,26 @@ public class RequestController {
     private final PetService petService;
 
     @GetMapping("/")
-    public String pets(@RequestParam(name = "name", required = false) String name,Principal principal, @NotNull Model model){
+    public String pets(@RequestParam(name = "name", required = false) String name,
+                       Principal principal, @NotNull Model model){
         User user = petService.getUserByPrincipal(principal);
         model.addAttribute("pets", petService.petList(name, user));
-        model.addAttribute("user", petService.getUserByPrincipal(principal));
+        model.addAttribute("user", user);
         return "pets";
     }
 
     @GetMapping("/pet/{id}")
-    public String petInfo(@PathVariable Long id, @NotNull Model model){
+    public String petInfo(@PathVariable Long id, @NotNull Model model, Principal principal){
         Pet pet = petService.getPetById(id);
+        model.addAttribute("user", petService.getUserByPrincipal(principal));
         model.addAttribute("pet", pet);
-        model.addAttribute("images", pet.getImages());
         return "pet-info";
     }
 
     @PostMapping("/product/create")
-    public String createPet(@RequestParam("file1") MultipartFile file1, Pet pet, Principal principal) throws IOException {
-        petService.savePet(principal, pet, file1);
+    public String createPet(@RequestParam("file") MultipartFile file,
+                            Pet pet, Principal principal) throws IOException {
+        petService.savePet(principal, pet, file);
         return "redirect:/";
     }
 
@@ -50,6 +53,5 @@ public class RequestController {
         petService.deletePet(id);
         return "redirect:/";
     }
-
 
 }

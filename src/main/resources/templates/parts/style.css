@@ -7,6 +7,16 @@
     font-family: Raleway, sans-serif;
 }
 
+
+a.text:active,
+a.text:hover,
+a.text{
+    text-decoration: none;
+    color: white;
+}
+a.text:hover{
+    color: #d7a0a0;
+}
 body {
     background: linear-gradient(90deg, #C7C5F4, #776BCC);
 }
@@ -69,7 +79,7 @@ body {
 .screen__background__shape3 {
     height: 540px;
     width: 190px;
-    background: linear-gradient(270deg, #5D54A4, #6A679E);
+    background: linear-gradient(270deg, #1abc9c, #6A679E);
     top: -24px;
     right: 0;
     border-radius: 32px;
@@ -78,7 +88,7 @@ body {
 .screen__background__shape4 {
     height: 400px;
     width: 200px;
-    background: #7E7BB9;
+    background: linear-gradient(270deg, #6A679E, #1abc9c);
     top: 420px;
     right: 50px;
     border-radius: 60px;
@@ -136,6 +146,14 @@ body {
 }
 
 
+.header {
+    padding: 15px;
+    text-align: center;
+    background: linear-gradient(270deg, #6A679E, #1abc9c);
+    color: white;
+    font-size: 30px;
+}
+
 .login__logo {
     padding: 5%;
     letter-spacing: 9.2pt;
@@ -144,6 +162,28 @@ body {
     color: #4C489D;
     -webkit-background-clip: text;
     margin-top: 20%;
+}
+
+.logout__submit{
+    background: #fff;
+    font-size: 14px;
+    margin-top: 5px;
+    padding: 8px 10px;
+    border-radius: 26px;
+    color: #0c6554;
+    border: 1px solid #D4D3E8;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: .2s;
+}
+.logout__submit:active,
+.logout__submit:focus,
+.logout__submit:hover {
+    border-color: #6A679E;
+    outline: none;
 }
 
 .login__submit:active,
@@ -156,7 +196,7 @@ body {
 .button__icon {
     font-size: 24px;
     margin-left: auto;
-    color: #7875B5;
+    color: #1abc9c;
 }
 
 .social-login {
@@ -188,5 +228,172 @@ body {
 
 
 *:focus {outline:none !important}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 225px);
+    width: 100%;
+    max-width: 1000px; /* Ширина grid-контейнера */
+    justify-content: center;
+    justify-items: center;
+    column-gap: 30px;
+    row-gap: 40px;
+    margin: 0 auto;
+}
+
+.card {
+    background: linear-gradient(270deg, #6A679E, #5C5696);
+    width: 225px;
+    min-height: 300px;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* Размещаем элементы в колонку */
+    border-radius: 4px;
+    transition: 0.2s;
+    position: relative;
+}
+
+/* При наведении на карточку - меняем цвет тени */
+.card:hover {
+    box-shadow: 4px 8px 16px rgba(255, 102, 51, 0.2);
+}
+
+.card__top {
+    flex: 0 0 220px; /* Задаем высоту 220px, запрещаем расширение и сужение по высоте */
+    position: relative;
+    overflow: hidden; /* Скрываем, что выходит за пределы */
+}
+
+/* Контейнер для картинки */
+.card__image {
+    display: block;
+    top: 0;
+    left: 0;
+    width: 95%;
+    height: 95%;
+}
+
+.card__image > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Встраиваем картинку в контейнер card__image */
+    transition: 0.2s;
+}
+
+/* При наведении - увеличиваем картинку */
+.card__image:hover > img {
+    transform: scale(1.1);
+}
+
+.card__bottom {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.card__prices {
+    display: flex;
+    margin-bottom: 10px;
+    flex: 0 0 50%; /* Размещаем цены равномерно в две колонки */
+}
+
+.card__price::after {
+    content: "₽";
+    margin-left: 4px;
+    position: relative;
+}
+
+.card__title {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 150%;
+    color: white;
+}
+
+.card__title:hover {
+    color: #de9e9e;
+}
+
+
+/* Стили для формы поиска */
+.search-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+/* Стили для текстового поля ввода */
+.search-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+}
+
+/* Стили для кнопки поиска */
+.search-btn {
+    background: linear-gradient(270deg, #6A679E, #1abc9c);
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+/* Стили для кнопки с указателем мыши */
+.search-btn:hover {
+    background-color: #0069d9;
+}
+
+/* Стили для кнопки в фокусе */
+.search-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+}
+
+.add_form {
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 400px;
+    margin: 0 auto;
+    background: #6A679E;
+}
+
+.add_form input[type="text"],
+.add_form input[type="file"],
+.add_form input[type="submit"] {
+    padding: 5px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.add_form input[type="text"],
+.add_form input[type="file"] {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.add_form input[type="submit"] {
+    background: linear-gradient(270deg, #6A679E, #1abc9c);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.add_form input[type="submit"]:hover {
+    background-color: #19b799;
+}
 
 </style>

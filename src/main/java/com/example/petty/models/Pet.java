@@ -6,8 +6,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Table(name = "pets")
@@ -25,10 +23,7 @@ public class Pet {
     private String description;
     @Column(name = "phone")
     private String phone;
-
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "pet")
-    private List<Image> images = new ArrayList<>();
-    private Long previewImageId;
+    private String filename;
     @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY)
     @JoinColumn
     private User user;
@@ -39,8 +34,5 @@ public class Pet {
         dateOfCreated = LocalDateTime.now();
     }
 
-    public void addImageToPet(Image image){
-        image.setPet(this);
-        images.add(image);
-    }
+
 }
