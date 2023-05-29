@@ -18,7 +18,7 @@ a.text:hover{
     color: #d7a0a0;
 }
 body {
-    background: linear-gradient(90deg, #C7C5F4, #776BCC);
+    background: linear-gradient(90deg, #dbefe1,#1d617a);
 }
 
 .container {
@@ -29,11 +29,11 @@ body {
 }
 
 .screen {
-    background: linear-gradient(90deg, #5D54A4, #7C78B8);
+    background: linear-gradient(90deg, #1d617a, #61c2a2);
     position: relative;
     height: 600px;
     width: 360px;
-    box-shadow: 0 0 24px #5C5696;
+    box-shadow: 0 0 24px #1d617a;
 }
 
 .screen__content {
@@ -70,7 +70,7 @@ body {
 .screen__background__shape2 {
     height: 220px;
     width: 220px;
-    background: #6C63AC;
+    background: #1d617a;
     top: -172px;
     right: 0;
     border-radius: 32px;
@@ -79,7 +79,7 @@ body {
 .screen__background__shape3 {
     height: 540px;
     width: 190px;
-    background: linear-gradient(270deg, #1abc9c, #6A679E);
+    background: linear-gradient(270deg, #dbefe1, #1d617a);
     top: -24px;
     right: 0;
     border-radius: 32px;
@@ -88,7 +88,7 @@ body {
 .screen__background__shape4 {
     height: 400px;
     width: 200px;
-    background: linear-gradient(270deg, #6A679E, #1abc9c);
+    background: linear-gradient(270deg, #1d617a,#dbefe1);
     top: 420px;
     right: 50px;
     border-radius: 60px;
@@ -117,7 +117,7 @@ body {
     font-weight: 700;
     width: 75%;
     transition: .2s;
-    color: #4C489D;
+    color: #1d617a;
 }
 
 .login__input:active,
@@ -139,7 +139,7 @@ body {
     display: flex;
     align-items: center;
     width: 100%;
-    color: #4C489D;
+    color: #1d617a;
     box-shadow: 0 2px 2px #5C5696;
     cursor: pointer;
     transition: .2s;
@@ -149,7 +149,7 @@ body {
 .header {
     padding: 15px;
     text-align: center;
-    background: linear-gradient(270deg, #6A679E, #1abc9c);
+    background: linear-gradient(270deg,  #61c2a2);
     color: white;
     font-size: 30px;
 }
@@ -159,7 +159,7 @@ body {
     letter-spacing: 9.2pt;
     line-height: 130%;
     font-size: 30px;
-    color: #4C489D;
+    color: #1d617a;
     -webkit-background-clip: text;
     margin-top: 20%;
 }
@@ -182,14 +182,14 @@ body {
 .logout__submit:active,
 .logout__submit:focus,
 .logout__submit:hover {
-    border-color: #6A679E;
+    border-color: #1d617a;
     outline: none;
 }
 
 .login__submit:active,
 .login__submit:focus,
 .login__submit:hover {
-    border-color: #6A679E;
+    border-color: #1d617a;
     outline: none;
 }
 
@@ -219,7 +219,7 @@ body {
     padding: 20px 10px;
     color: #fff;
     text-decoration: none;
-    text-shadow: 0 0 8px #7875B5;
+    text-shadow: 0 0 8px #61c2a2;
 }
 
 .social-login__icon:hover {
@@ -242,13 +242,14 @@ body {
 }
 
 .card {
-    background: linear-gradient(270deg, #6A679E, #5C5696);
+    background: linear-gradient(270deg, #61c2a2);
     width: 225px;
     min-height: 300px;
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column; /* Размещаем элементы в колонку */
     border-radius: 4px;
+    border: 1px solid #1d617a;
     transition: 0.2s;
     position: relative;
 }
@@ -338,7 +339,7 @@ body {
 
 /* Стили для кнопки поиска */
 .search-btn {
-    background: linear-gradient(270deg, #6A679E, #1abc9c);
+    background: linear-gradient(270deg, #1d617a, #dbefe1);
     color: #fff;
     font-size: 16px;
     border: none;
@@ -349,51 +350,13 @@ body {
 
 /* Стили для кнопки с указателем мыши */
 .search-btn:hover {
-    background-color: #0069d9;
+    background-color: #1d617a;
 }
 
 /* Стили для кнопки в фокусе */
 .search-btn:focus {
     outline: none;
     box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
-}
-
-.add_form {
-    border: 1px solid #ccc;
-    padding: 20px;
-    width: 400px;
-    margin: 0 auto;
-    background: #6A679E;
-}
-
-.add_form input[type="text"],
-.add_form input[type="file"],
-.add_form input[type="submit"] {
-    padding: 5px;
-    margin-bottom: 10px;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.add_form input[type="text"],
-.add_form input[type="file"] {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.add_form input[type="submit"] {
-    background: linear-gradient(270deg, #6A679E, #1abc9c);
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    padding: 10px;
-    transition: background-color 0.3s ease-in-out;
-}
-
-.add_form input[type="submit"]:hover {
-    background-color: #19b799;
 }
 
 </style>
